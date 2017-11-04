@@ -45,8 +45,7 @@ class Topic extends React.Component {
         <div>
         <form onSubmit={this.handleSubmit}>
           <label>
-          Topic:
-          <br/>
+          Topic: 
             <input type="text" value={this.state.value} onChange={this.handleChange}
              placeholder="SpaceX, Tesla etc.. "/>
           </label>
