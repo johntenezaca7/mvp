@@ -1,5 +1,6 @@
 import React from 'react';
 import RenderThis from './render.js';
+
 const axios = require('axios');
 
 
@@ -29,7 +30,7 @@ class Topic extends React.Component {
       .then( (response) => {
 
         console.log('front end',response.data);
-        console.log(this)
+    
         this.setState({data: response.data})
       })
       .catch(function (error) {
@@ -51,7 +52,8 @@ class Topic extends React.Component {
           </label>
           <input type="submit" value="Submit" />
         </form>
-       <RenderThis datas={this.state.data}/>
+              {this.state.data.map((ele, i) => 
+                <RenderThis obj={ele} key={i}/> )}
         </div>
       );
     }
